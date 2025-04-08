@@ -1,0 +1,4 @@
+para rodar testes novamente depois: 
+arquivo package.json
+
+    // "test": "react-scripts test",

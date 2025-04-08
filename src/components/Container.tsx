@@ -7,7 +7,7 @@ type ContainerProps = {
 function Container({ children }: ContainerProps) {
   return (
     <div className="flex flex-col p-6 items-center">
-      <h1 className="text-lg font-bold text-gray-600">
+      <h1 className="text-lg font-bold text-gray-600 mb-6">
         Gerenciador de tarefas
       </h1>
       {children}

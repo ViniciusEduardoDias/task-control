@@ -23,7 +23,7 @@ function App() {
       id: 2,
       title: "Configurar Tailwind CSS",
       description: "Integrar o Tailwind em um projeto React com Vite.",
-      isCompleted: true,
+      isCompleted: false,
     },
     {
       id: 3,
@@ -46,11 +46,23 @@ function App() {
     },
   ]);
 
+  const onChangeCompleted = (taskId: number) => {
+    const newTasks = tasks.map((task) => {
+      //selecionar a tarefa clicada
+      if (task.id === taskId) {
+        return { ...task, isCompleted: !task.isCompleted };
+      }
+      //Não precisa atualizar
+      return task;
+    });
+    setTasks(newTasks);
+  };
+
   return (
     <>
       <Header />
       <Container>
-        <Tasks tasks={tasks} />
+        <Tasks tasks={tasks} onChangeCompleted={onChangeCompleted} />
       </Container>
     </>
   );
