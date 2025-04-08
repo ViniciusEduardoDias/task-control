@@ -1,7 +1,7 @@
 import { ChevronRightIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 type Task = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   isCompleted: boolean;
@@ -9,8 +9,8 @@ type Task = {
 
 type TasksProps = {
   tasks: Task[];
-  onChangeCompleted: (taskId: number) => void;
-  onDeleteTask: (taskId: number) => void;
+  onChangeCompleted: (taskId: string) => void;
+  onDeleteTask: (taskId: string) => void;
 };
 
 const Tasks = ({ onDeleteTask, onChangeCompleted, tasks }: TasksProps) => {
@@ -27,7 +27,11 @@ const Tasks = ({ onDeleteTask, onChangeCompleted, tasks }: TasksProps) => {
             {task.title}
           </button>
 
-          <button className="bg-slate-300 p-2 rounded-sm hover:bg-slate-900 hover:text-white transition duration-5000 ease-in-out">
+          <button
+            className={
+              "bg-slate-300 p-2 rounded-sm hover:bg-slate-900 hover:text-white transition duration-5000 ease-in-out"
+            }
+          >
             <ChevronRightIcon className="size-4" />
           </button>
 
