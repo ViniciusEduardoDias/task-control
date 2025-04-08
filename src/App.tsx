@@ -42,7 +42,7 @@ function App() {
       title: "Criar portfólio",
       description:
         "Montar uma página pessoal com projetos e informações de contato.",
-      isCompleted: true,
+      isCompleted: false,
     },
   ]);
 
@@ -58,11 +58,20 @@ function App() {
     setTasks(newTasks);
   };
 
+  const onDeleteTask = (taskId: number) => {
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(newTasks);
+  };
+
   return (
     <>
       <Header />
       <Container>
-        <Tasks tasks={tasks} onChangeCompleted={onChangeCompleted} />
+        <Tasks
+          tasks={tasks}
+          onChangeCompleted={onChangeCompleted}
+          onDeleteTask={onDeleteTask}
+        />
       </Container>
     </>
   );
