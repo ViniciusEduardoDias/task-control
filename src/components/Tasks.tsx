@@ -1,5 +1,6 @@
 import { ChevronRightIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 type Task = {
   id: string;
@@ -29,30 +30,31 @@ const Tasks = ({ onDeleteTask, onChangeCompleted, tasks }: TasksProps) => {
     <ul className="w-full space-y-2 p-4 bg-slate-100 rounded-md shadow-md">
       {tasks.map((task) => (
         <li key={task.id} className="flex justify-between gap-1">
-          <button
+          {/* <button
             className={`text-start w-full bg-slate-300 p-2 rounded-sm hover:bg-slate-800 hover:text-white transition duration-5000 ease-in-out ${
               task.isCompleted ? "line-through" : ""
             }`}
             onClick={() => onChangeCompleted(task.id)}
           >
             {task.title}
-          </button>
+          </button> */}
 
-          <button
-            className={
-              "bg-slate-300 p-2 rounded-sm hover:bg-slate-800 hover:text-white transition duration-5000 ease-in-out"
-            }
-            onClick={() => handleDetalhes(task.title, task.description)}
+          <Button
+            className={`text-start w-full ${
+              task.isCompleted ? "line-through" : ""
+            }`}
+            onClick={() => onChangeCompleted(task.id)}
           >
+            {task.title}
+          </Button>
+
+          <Button onClick={() => handleDetalhes(task.title, task.description)}>
             <ChevronRightIcon className="size-4" />
-          </button>
+          </Button>
 
-          <button
-            className="bg-slate-300 p-2 rounded-sm hover:bg-slate-800 hover:text-white transition duration-5000 ease-in-out"
-            onClick={() => onDeleteTask(task.id)}
-          >
+          <Button onClick={() => onDeleteTask(task.id)}>
             <TrashIcon className="size-4" />
-          </button>
+          </Button>
         </li>
       ))}
     </ul>
