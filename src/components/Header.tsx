@@ -5,13 +5,8 @@ function Header() {
       <nav>
         <ul className="flex gap-6 text-base font-medium">
           <li>
-            <a href="#" className="hover:text-gray-800 transition">
+            <a href="#tasks" className="hover:text-gray-800 transition">
               Tarefas
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-gray-800 transition">
-              Calendário
             </a>
           </li>
         </ul>

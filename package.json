@@ -15,6 +15,7 @@
     "projeto-tailwind-react": "file:",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
     "react-scripts": "5.0.1",
     "task-control": "file:",
     "typescript": "^4.9.5",
