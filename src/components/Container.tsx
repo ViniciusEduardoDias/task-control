@@ -6,7 +6,7 @@ type ContainerProps = {
 
 function Container({ children }: ContainerProps) {
   return (
-    <div className="flex w-full flex-col p-6 items-center gap-5">
+    <div className="flex flex-col items-center md:w-[700px] md:mx-auto py-6 mx-6 gap-5">
       {children}
     </div>
   );

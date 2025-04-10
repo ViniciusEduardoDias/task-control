@@ -10,7 +10,7 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
   const [description, setDescription] = useState<string>("");
 
   return (
-    <div className="flex flex-col w-2/3 space-y-2 p-4 bg-slate-100 rounded-md shadow-md gap-2">
+    <div className="w-full flex flex-col space-y-4 p-4 bg-slate-100 rounded-md shadow-md">
       <h1 className="text-lg font-semibold text-slate-500">Adicionar tarefa</h1>
       <Input
         type="text"

@@ -27,20 +27,11 @@ const Tasks = ({ onDeleteTask, onChangeCompleted, tasks }: TasksProps) => {
   };
 
   return (
-    <ul className="w-full space-y-2 p-4 bg-slate-100 rounded-md shadow-md">
+    <ul className="space-y-2 p-4 bg-slate-100 rounded-md shadow-md">
       {tasks.map((task) => (
-        <li key={task.id} className="flex justify-between gap-1">
-          {/* <button
-            className={`text-start w-full bg-slate-300 p-2 rounded-sm hover:bg-slate-800 hover:text-white transition duration-5000 ease-in-out ${
-              task.isCompleted ? "line-through" : ""
-            }`}
-            onClick={() => onChangeCompleted(task.id)}
-          >
-            {task.title}
-          </button> */}
-
+        <li key={task.id} className="flex gap-1">
           <Button
-            className={`text-start w-full ${
+            className={`flex-1 truncate sm:w-full text-start ${
               task.isCompleted ? "line-through" : ""
             }`}
             onClick={() => onChangeCompleted(task.id)}
@@ -48,11 +39,17 @@ const Tasks = ({ onDeleteTask, onChangeCompleted, tasks }: TasksProps) => {
             {task.title}
           </Button>
 
-          <Button onClick={() => handleDetalhes(task.title, task.description)}>
+          <Button
+            className="flex-shrink-0"
+            onClick={() => handleDetalhes(task.title, task.description)}
+          >
             <ChevronRightIcon className="size-4" />
           </Button>
 
-          <Button onClick={() => onDeleteTask(task.id)}>
+          <Button
+            className="flex-shrink-0"
+            onClick={() => onDeleteTask(task.id)}
+          >
             <TrashIcon className="size-4" />
           </Button>
         </li>

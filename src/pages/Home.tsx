@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../App.css";
 import { Tasks, Container } from "../components";
 import AddTask from "../components/AddTask";
 import { v4 as uuidv4 } from "uuid";
@@ -52,7 +51,7 @@ function Home() {
     <>
       <Container>
         <AddTask onAddTask={onAddTask} />
-        <div id="tasks" className="w-2/3">
+        <div id="tasks" className="w-full">
           <Tasks
             tasks={tasks}
             onChangeCompleted={onChangeCompleted}
